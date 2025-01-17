@@ -1,23 +1,25 @@
 pluginManagement {
     repositories {
-        gradlePluginPortal()
-        maven { url = 'https://gitlab.com/api/v4/projects/26758973/packages/maven' }
         maven {
             // RetroFuturaGradle
-            name = "GTNH Maven"
-            url = uri("http://jenkins.usrv.eu:8081/nexus/content/groups/public/")
-            allowInsecureProtocol = true
+            name 'GTNH Maven'
+            url 'https://nexus.gtnewhorizons.com/repository/public/'
             mavenContent {
-                includeGroup("com.gtnewhorizons")
-                includeGroup("com.gtnewhorizons.retrofuturagradle")
+                includeGroup 'com.gtnewhorizons'
+                includeGroup 'com.gtnewhorizons.retrofuturagradle'
             }
         }
+        gradlePluginPortal()
+        mavenCentral()
+        mavenLocal()
     }
 }
 
 plugins {
-    id 'org.gradle.toolchains.foojay-resolver-convention' version '0.7.0' // Provides java toolchains
+    // Automatic toolchain provisioning
+    id 'org.gradle.toolchains.foojay-resolver-convention' version '0.8.0'
 }
 
-
-rootProject.name = "${mod_name}"
+// Due to an IntelliJ bug, this has to be done
+// rootProject.name = archives_base_name
+rootProject.name = rootProject.projectDir.getName()

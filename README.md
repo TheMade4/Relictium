@@ -1,19 +1,13 @@
-<p align="center">
-  <img src="logo.png" width="250">
-</p>
-
-# Vintagium
-Vintagium is an Unofficial Fork of CaffeineMC's ["Sodium"](https://modrinth.com/mod/sodium), ported to 1.12.2 and made to work with Forge Mod Loader.
-
-## Disclaimer
-Vintagium is not and never will be compatible with Optifine!
+<img src="src/main/resources/assets/sodium/logo.png" width="256">
 
 
-## Contributors
-<a href="https://github.com/Asek3/sodium-1.12/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=Asek3/sodium-1.12" />
-</a>
+# Relictium
+Relictium is an unofficial fork of [Vintagium (by Asek3)](https://github.com/Asek3/sodium-1.12), which is an unofficial fork of [CaffeineMC's “Sodium”](https://github.com/CaffeineMC/sodium), ported to version 1.12.2, and made to work with Forge Mod Loader.
 
-## License
-[LGPL-3.0 license](https://github.com/Asek3/sodium-1.12/blob/12.x/forge/LICENSE.txt)
 
+
+
+# Warning
+
+
+Relictium is not and never will be compatible with Optifine!
