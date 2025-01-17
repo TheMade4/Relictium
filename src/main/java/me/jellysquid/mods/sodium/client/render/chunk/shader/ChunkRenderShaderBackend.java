@@ -31,13 +31,13 @@ public abstract class ChunkRenderShaderBackend<T extends ChunkGraphicsState>
 
     private ChunkProgram createShader(RenderDevice device, ChunkFogMode fogMode, GlVertexFormat<ChunkMeshAttribute> vertexFormat) {
         GlShader vertShader = ShaderLoader.loadShader(device, ShaderType.VERTEX,
-                new ResourceLocation("sodium", "chunk_gl20.v.glsl"), fogMode.getDefines());
+                new ResourceLocation("relictium", "chunk_gl20.v.glsl"), fogMode.getDefines());
 
         GlShader fragShader = ShaderLoader.loadShader(device, ShaderType.FRAGMENT,
-                new ResourceLocation("sodium", "chunk_gl20.f.glsl"), fogMode.getDefines());
+                new ResourceLocation("relictium", "chunk_gl20.f.glsl"), fogMode.getDefines());
 
         try {
-            return GlProgram.builder(new ResourceLocation("sodium", "chunk_shader"))
+            return GlProgram.builder(new ResourceLocation("relictium", "chunk_shader"))
                     .attachShader(vertShader)
                     .attachShader(fragShader)
                     .bindAttribute("a_Pos", ChunkShaderBindingPoints.POSITION)

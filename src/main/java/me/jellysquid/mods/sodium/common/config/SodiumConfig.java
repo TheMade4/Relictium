@@ -18,7 +18,7 @@ import java.util.stream.Stream;
 public class SodiumConfig {
     private static final Logger LOGGER = LogManager.getLogger(SodiumClientMod.MODNAME + "Config");
 
-    private static final String JSON_KEY_SODIUM_OPTIONS = "sodium:options";
+    private static final String JSON_KEY_SODIUM_OPTIONS = "relictium:options";
 
     private static final Set<String> SYSTEM_OPTIONS = Stream.of(
             "core",

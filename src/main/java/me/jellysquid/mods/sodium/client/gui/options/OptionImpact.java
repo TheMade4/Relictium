@@ -4,11 +4,11 @@ import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.util.text.TextFormatting;
 
 public enum OptionImpact {
-    LOW(TextFormatting.GREEN, new TextComponentTranslation("sodium.option_impact.low").getFormattedText()),
-    MEDIUM(TextFormatting.YELLOW, new TextComponentTranslation("sodium.option_impact.medium").getFormattedText()),
-    HIGH(TextFormatting.GOLD, new TextComponentTranslation("sodium.option_impact.high").getFormattedText()),
-    EXTREME(TextFormatting.RED, new TextComponentTranslation("sodium.option_impact.extreme").getFormattedText()),
-    VARIES(TextFormatting.WHITE, new TextComponentTranslation("sodium.option_impact.varies").getFormattedText());
+    LOW(TextFormatting.GREEN, new TextComponentTranslation("relictium.option_impact.low").getFormattedText()),
+    MEDIUM(TextFormatting.YELLOW, new TextComponentTranslation("relictium.option_impact.medium").getFormattedText()),
+    HIGH(TextFormatting.GOLD, new TextComponentTranslation("relictium.option_impact.high").getFormattedText()),
+    EXTREME(TextFormatting.RED, new TextComponentTranslation("relictium.option_impact.extreme").getFormattedText()),
+    VARIES(TextFormatting.WHITE, new TextComponentTranslation("relictium.option_impact.varies").getFormattedText());
 
     private final TextFormatting color;
     private final String text;

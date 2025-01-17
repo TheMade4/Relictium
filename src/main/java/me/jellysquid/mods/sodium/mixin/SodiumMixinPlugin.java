@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.Set;
 
 public class SodiumMixinPlugin implements IMixinConfigPlugin {
-    private static final String MIXIN_PACKAGE_ROOT = "me.jellysquid.mods.sodium.mixin.";
+    private static final String MIXIN_PACKAGE_ROOT = "me.jellysquid.mods.relictium.mixin.";
 
     private final Logger logger = LogManager.getLogger(SodiumClientMod.MODNAME);
     private SodiumConfig config;
