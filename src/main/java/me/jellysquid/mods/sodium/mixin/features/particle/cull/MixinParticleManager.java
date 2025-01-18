@@ -1,7 +1,7 @@
 package me.jellysquid.mods.sodium.mixin.features.particle.cull;
 
 import com.llamalad7.mixinextras.injector.WrapWithCondition;
-import me.jellysquid.mods.sodium.client.SodiumClientMod;
+import io.themade4.relictium.Relictium;
 import me.jellysquid.mods.sodium.client.render.SodiumWorldRenderer;
 import net.minecraft.client.particle.Particle;
 import net.minecraft.client.particle.ParticleManager;
@@ -22,7 +22,7 @@ public class MixinParticleManager {
     @Inject(method = {"renderParticles", "renderLitParticles"}, at = @At("HEAD"))
     private void preRenderParticles(Entity entity, float partialTicks, CallbackInfo ci) {
         Frustum frustum = SodiumWorldRenderer.getInstance().getFrustum();
-        boolean useCulling = SodiumClientMod.options().advanced.useParticleCulling;
+        boolean useCulling = Relictium.options().advanced.useParticleCulling;
 
         // Setup the frustum state before rendering particles
         if (useCulling && frustum != null) {

@@ -2,8 +2,6 @@ package me.jellysquid.mods.sodium.client.gl.attribute;
 
 import java.util.EnumMap;
 
-import me.jellysquid.mods.sodium.client.SodiumClientMod;
-
 /**
  * Provides a generic vertex format which contains the attributes defined by {@param T}. Other code can then retrieve
  * the attributes and work with encoded data in a generic manner without needing to rely on a specific format.

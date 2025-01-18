@@ -1,6 +1,7 @@
 package me.jellysquid.mods.sodium.client;
 
 import com.google.common.collect.ImmutableList;
+import io.themade4.relictium.Tags;
 import net.minecraftforge.fml.relauncher.IFMLLoadingPlugin;
 import zone.rong.mixinbooter.IEarlyMixinLoader;
 
@@ -13,7 +14,7 @@ import java.util.Map;
 public class SodiumMixinTweaker implements IFMLLoadingPlugin, IEarlyMixinLoader {
     @Override
     public List<String> getMixinConfigs() {
-        return ImmutableList.of(SodiumClientMod.MODID + ".mixins.json");
+        return ImmutableList.of("mixins." + Tags.MOD_ID + ".json");
     }
 
     @Override

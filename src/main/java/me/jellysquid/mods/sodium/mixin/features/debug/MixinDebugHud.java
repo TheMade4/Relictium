@@ -2,7 +2,7 @@ package me.jellysquid.mods.sodium.mixin.features.debug;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
-import me.jellysquid.mods.sodium.client.SodiumClientMod;
+import io.themade4.relictium.Relictium;
 import me.jellysquid.mods.sodium.client.render.SodiumWorldRenderer;
 import me.jellysquid.mods.sodium.client.render.chunk.ChunkRenderBackend;
 import net.minecraft.client.gui.GuiOverlayDebug;
@@ -27,12 +27,12 @@ public abstract class MixinDebugHud {
     private ArrayList<String> redirectRightTextEarly(Object[] elements) {
         ArrayList<String> strings = Lists.newArrayList((String[]) elements);
         strings.add("");
-        strings.add(SodiumClientMod.MODNAME + " Renderer");
+        strings.add(Relictium.MODNAME + " Renderer");
         strings.add(TextFormatting.UNDERLINE + getFormattedVersionText());
         strings.add("");
         strings.addAll(getChunkRendererDebugStrings());
 
-        if (SodiumClientMod.options().advanced.ignoreDriverBlacklist) {
+        if (Relictium.options().advanced.ignoreDriverBlacklist) {
             strings.add(TextFormatting.RED + "(!!) Driver blacklist ignored");
         }
 
@@ -50,7 +50,7 @@ public abstract class MixinDebugHud {
     }
 
     private static String getFormattedVersionText() {
-        String version = SodiumClientMod.getVersion();
+        String version = Relictium.getVersion();
         TextFormatting color;
 
         if (version.contains("git.")) {

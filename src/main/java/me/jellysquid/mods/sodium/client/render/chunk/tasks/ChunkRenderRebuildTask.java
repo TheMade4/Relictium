@@ -1,6 +1,6 @@
 package me.jellysquid.mods.sodium.client.render.chunk.tasks;
 
-import me.jellysquid.mods.sodium.client.SodiumClientMod;
+import io.themade4.relictium.Relictium;
 import me.jellysquid.mods.sodium.client.render.chunk.ChunkGraphicsState;
 import me.jellysquid.mods.sodium.client.render.chunk.ChunkRenderContainer;
 import me.jellysquid.mods.sodium.client.render.chunk.compile.ChunkBuildBuffers;
@@ -33,7 +33,6 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.WorldType;
 import net.minecraftforge.client.ForgeHooksClient;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.fluids.IFluidBlock;
 import org.embeddedt.embeddium.api.ChunkDataBuiltEvent;
 import org.embeddedt.embeddium.compat.ccl.CCLCompat;
 
@@ -61,7 +60,7 @@ public class ChunkRenderRebuildTask<T extends ChunkGraphicsState> extends ChunkR
         this.offset = offset;
         this.context = context;
         this.camera = Vec3d.ZERO;
-        this.translucencySorting = SodiumClientMod.options().advanced.translucencySorting;
+        this.translucencySorting = Relictium.options().advanced.translucencySorting;
     }
 
     public ChunkRenderRebuildTask<T> withCameraPosition(Vec3d camera) {

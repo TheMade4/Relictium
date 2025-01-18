@@ -1,6 +1,6 @@
 package me.jellysquid.mods.sodium.mixin.features.options;
 
-import me.jellysquid.mods.sodium.client.SodiumClientMod;
+import io.themade4.relictium.Relictium;
 import me.jellysquid.mods.sodium.client.gui.SodiumGameOptions;
 import net.minecraft.client.Minecraft;
 import org.spongepowered.asm.mixin.Mixin;
@@ -14,6 +14,6 @@ public class MixinMinecraftClient {
      */
     @Overwrite
     public static boolean isAmbientOcclusionEnabled() {
-        return SodiumClientMod.options().quality.smoothLighting != SodiumGameOptions.LightingQuality.OFF;
+        return Relictium.options().quality.smoothLighting != SodiumGameOptions.LightingQuality.OFF;
     }
 }

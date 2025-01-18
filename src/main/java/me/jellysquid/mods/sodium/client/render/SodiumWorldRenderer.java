@@ -3,7 +3,7 @@ package me.jellysquid.mods.sodium.client.render;
 import it.unimi.dsi.fastutil.longs.LongOpenHashSet;
 import it.unimi.dsi.fastutil.longs.LongSet;
 import it.unimi.dsi.fastutil.objects.ObjectOpenHashSet;
-import me.jellysquid.mods.sodium.client.SodiumClientMod;
+import io.themade4.relictium.Relictium;
 import me.jellysquid.mods.sodium.client.gl.compat.FogHelper;
 import me.jellysquid.mods.sodium.client.gl.device.RenderDevice;
 import me.jellysquid.mods.sodium.client.gui.SodiumGameOptions;
@@ -182,7 +182,7 @@ public class SodiumWorldRenderer implements ChunkStatusListener {
     public void updateChunks(Frustum frustum, float ticks, boolean hasForcedFrustum, int frame, boolean spectator) {
         this.frustum = frustum;
 
-        this.useEntityCulling = SodiumClientMod.options().advanced.useEntityCulling;
+        this.useEntityCulling = Relictium.options().advanced.useEntityCulling;
 
         if (this.client.gameSettings.renderDistanceChunks != this.renderDistance) {
             this.reload();
@@ -280,7 +280,7 @@ public class SodiumWorldRenderer implements ChunkStatusListener {
 
         this.renderDistance = this.client.gameSettings.renderDistanceChunks;
 
-        SodiumGameOptions opts = SodiumClientMod.options();
+        SodiumGameOptions opts = Relictium.options();
 
         this.renderPassManager = BlockRenderPassManager.createDefaultMappings();
 
@@ -302,7 +302,7 @@ public class SodiumWorldRenderer implements ChunkStatusListener {
     private static ChunkRenderBackend<?> createChunkRenderBackend(RenderDevice device,
                                                                   SodiumGameOptions options,
                                                                   ChunkVertexType vertexFormat) {
-        boolean disableBlacklist = SodiumClientMod.options().advanced.ignoreDriverBlacklist;
+        boolean disableBlacklist = Relictium.options().advanced.ignoreDriverBlacklist;
 
         if (options.advanced.useChunkMultidraw && MultidrawChunkRenderBackend.isSupported(disableBlacklist)) {
             return new MultidrawChunkRenderBackend(device, vertexFormat);
@@ -323,7 +323,7 @@ public class SodiumWorldRenderer implements ChunkStatusListener {
             TileEntityRendererDispatcher.instance.render(tileEntity, partialTicks, damageProgress);
         } catch(RuntimeException e) {
             if(tileEntity.isInvalid()) {
-                SodiumClientMod.logger().error("Suppressing crash from invalid tile entity", e);
+                Relictium.logger().error("Suppressing crash from invalid tile entity", e);
             } else {
                 throw e;
             }

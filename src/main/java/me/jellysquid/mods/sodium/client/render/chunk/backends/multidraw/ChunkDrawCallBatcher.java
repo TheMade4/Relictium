@@ -1,6 +1,6 @@
 package me.jellysquid.mods.sodium.client.render.chunk.backends.multidraw;
 
-import me.jellysquid.mods.sodium.client.SodiumClientMod;
+import io.themade4.relictium.Relictium;
 import me.jellysquid.mods.sodium.client.util.CompatMemoryUtil;
 import net.minecraft.util.math.MathHelper;
 import org.lwjgl.MemoryUtil;
@@ -26,7 +26,7 @@ public abstract class ChunkDrawCallBatcher extends StructBuffer {
     }
 
     public static ChunkDrawCallBatcher create(int capacity) {
-        return SodiumClientMod.isDirectMemoryAccessEnabled() ? new UnsafeChunkDrawCallBatcher(capacity) : new NioChunkDrawCallBatcher(capacity);
+        return Relictium.isDirectMemoryAccessEnabled() ? new UnsafeChunkDrawCallBatcher(capacity) : new NioChunkDrawCallBatcher(capacity);
     }
 
     public void begin() {

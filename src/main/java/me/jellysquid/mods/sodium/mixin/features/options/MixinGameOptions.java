@@ -1,6 +1,6 @@
 package me.jellysquid.mods.sodium.mixin.features.options;
 
-import me.jellysquid.mods.sodium.client.SodiumClientMod;
+import io.themade4.relictium.Relictium;
 import me.jellysquid.mods.sodium.client.gui.SodiumGameOptions;
 import net.minecraft.client.settings.GameSettings;
 import org.spongepowered.asm.mixin.Mixin;
@@ -21,7 +21,7 @@ public class MixinGameOptions {
      */
     @Overwrite
     public int shouldRenderClouds() {
-        SodiumGameOptions options = SodiumClientMod.options();
+        SodiumGameOptions options = Relictium.options();
 
         if (this.renderDistanceChunks < 4 || !options.quality.enableClouds) {
             return 0;

@@ -6,11 +6,15 @@ import net.minecraftforge.fml.common.Mod;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-@Mod(modid = Tags.MOD_ID, name = Tags.MOD_NAME, version = Tags.VERSION, useMetadata = true)
+@Mod(modid = Relictium.MODID, useMetadata = true)
 public class Relictium {
 
+    public static final String MODID = Tags.MOD_ID;
+    public static final String MODNAME = Tags.MOD_NAME;
+    public static final String MOD_VERSION = Tags.VERSION;
+
     private static SodiumGameOptions CONFIG;
-    public static Logger LOGGER = LogManager.getLogger(Tags.MOD_NAME);
+    public static Logger LOGGER = LogManager.getLogger(MODNAME);
 
     public static SodiumGameOptions options() {
         if (CONFIG == null) {
@@ -22,22 +26,21 @@ public class Relictium {
 
     public static Logger logger() {
         if (LOGGER == null) {
-            LOGGER = LogManager.getLogger(Tags.MOD_NAME);
+            LOGGER = LogManager.getLogger(MODNAME);
         }
 
         return LOGGER;
     }
 
     private static SodiumGameOptions loadConfig() {
-        return SodiumGameOptions.load(Minecraft.getMinecraft().gameDir.toPath().resolve("config").resolve(Tags.MOD_ID + "-options.json"));
+        return SodiumGameOptions.load(Minecraft.getMinecraft().gameDir.toPath().resolve("config").resolve(MODID + "-options.json"));
     }
 
     public static String getVersion() {
-        return Tags.VERSION;
+        return MOD_VERSION;
     }
 
     public static boolean isDirectMemoryAccessEnabled() {
         return options().advanced.allowDirectMemoryAccess;
     }
-
 }

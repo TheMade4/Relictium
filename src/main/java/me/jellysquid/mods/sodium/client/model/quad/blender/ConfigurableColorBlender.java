@@ -1,6 +1,6 @@
 package me.jellysquid.mods.sodium.client.model.quad.blender;
 
-import me.jellysquid.mods.sodium.client.SodiumClientMod;
+import io.themade4.relictium.Relictium;
 import me.jellysquid.mods.sodium.client.model.quad.ModelQuadView;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.Minecraft;
@@ -18,7 +18,7 @@ class ConfigurableColorBlender implements BiomeColorBlender {
     }
 
     private static boolean isSmoothBlendingEnabled() {
-        return SodiumClientMod.options().quality.biomeBlendRadius > 0;
+        return Relictium.options().quality.biomeBlendRadius > 0;
     }
 
     @Override

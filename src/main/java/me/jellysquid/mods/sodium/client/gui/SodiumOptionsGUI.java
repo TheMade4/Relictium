@@ -1,6 +1,6 @@
 package me.jellysquid.mods.sodium.client.gui;
 
-import me.jellysquid.mods.sodium.client.SodiumClientMod;
+import io.themade4.relictium.Relictium;
 import me.jellysquid.mods.sodium.client.gui.options.*;
 import me.jellysquid.mods.sodium.client.gui.options.control.Control;
 import me.jellysquid.mods.sodium.client.gui.options.control.ControlElement;
@@ -90,7 +90,7 @@ public class SodiumOptionsGUI extends GuiScreen {
         this.donateButton = new FlatButtonWidget(new Dim2i(this.width - 128, 6, 100, 20), new TextComponentTranslation("relictium.options.buttons.donate").getFormattedText(), this::openDonationPage);
         this.hideDonateButton = new FlatButtonWidget(new Dim2i(this.width - 26, 6, 20, 20), "x", this::hideDonationButton);
 
-        if (SodiumClientMod.options().notifications.hideDonationButton) {
+        if (Relictium.options().notifications.hideDonationButton) {
             this.setDonationButtonVisibility(false);
         }
 
@@ -113,7 +113,7 @@ public class SodiumOptionsGUI extends GuiScreen {
     }
 
     private void hideDonationButton() {
-        SodiumGameOptions options = SodiumClientMod.options();
+        SodiumGameOptions options = Relictium.options();
         options.notifications.hideDonationButton = true;
 
         try {

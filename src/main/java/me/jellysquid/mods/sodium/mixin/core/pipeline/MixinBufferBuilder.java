@@ -1,6 +1,6 @@
 package me.jellysquid.mods.sodium.mixin.core.pipeline;
 
-import me.jellysquid.mods.sodium.client.SodiumClientMod;
+import io.themade4.relictium.Relictium;
 import me.jellysquid.mods.sodium.client.gl.attribute.BufferVertexFormat;
 import me.jellysquid.mods.sodium.client.model.vertex.VertexDrain;
 import me.jellysquid.mods.sodium.client.model.vertex.VertexSink;
@@ -105,7 +105,7 @@ public abstract class MixinBufferBuilder implements VertexBufferView, VertexDrai
         BlittableVertexType<T> blittable = factory.asBlittable();
 
         if (blittable != null && blittable.getBufferVertexFormat() == this.getVertexFormat())  {
-            return blittable.createBufferWriter(this, SodiumClientMod.isDirectMemoryAccessEnabled());
+            return blittable.createBufferWriter(this, Relictium.isDirectMemoryAccessEnabled());
         }
 
         return factory.createFallbackWriter((BufferBuilder) (Object) this);

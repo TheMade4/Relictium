@@ -1,11 +1,9 @@
 package me.jellysquid.mods.sodium.mixin.features.chunk_rendering;
 
-import me.jellysquid.mods.sodium.client.SodiumClientMod;
+import io.themade4.relictium.Relictium;
 import me.jellysquid.mods.sodium.client.world.SodiumBlockAccess;
-import me.jellysquid.mods.sodium.client.world.WorldSlice;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
-import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeColorHelper;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
@@ -23,7 +21,7 @@ public class MixinBiomeColorHelper {
             // Use Sodium's more efficient biome cache
             return ((SodiumBlockAccess)blockAccess).getBlockTint(pos, colorResolver);
         }
-        int radius = SodiumClientMod.options().quality.biomeBlendRadius;
+        int radius = Relictium.options().quality.biomeBlendRadius;
         if (radius == 0) {
             return colorResolver.getColorAtPos(blockAccess.getBiome(pos), pos);
         } else {

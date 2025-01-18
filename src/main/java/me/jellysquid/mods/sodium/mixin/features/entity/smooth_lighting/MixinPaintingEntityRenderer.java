@@ -1,6 +1,6 @@
 package me.jellysquid.mods.sodium.mixin.features.entity.smooth_lighting;
 
-import me.jellysquid.mods.sodium.client.SodiumClientMod;
+import io.themade4.relictium.Relictium;
 import me.jellysquid.mods.sodium.client.gui.SodiumGameOptions;
 import me.jellysquid.mods.sodium.client.model.light.EntityLighter;
 import net.minecraft.client.renderer.entity.Render;
@@ -37,7 +37,7 @@ public abstract class MixinPaintingEntityRenderer extends Render<EntityPainting>
 
     @Redirect(method = "setLightmap", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/World;getCombinedLight(Lnet/minecraft/util/math/BlockPos;I)I"))
     public int redirectLightmapCoord(World world, BlockPos pos, int type) {
-        if (SodiumClientMod.options().quality.smoothLighting == SodiumGameOptions.LightingQuality.HIGH && this.entity != null) {
+        if (Relictium.options().quality.smoothLighting == SodiumGameOptions.LightingQuality.HIGH && this.entity != null) {
             return EntityLighter.getBlendedLight(this.entity, tickDelta);
         } else {
             return world.getCombinedLight(pos, type);

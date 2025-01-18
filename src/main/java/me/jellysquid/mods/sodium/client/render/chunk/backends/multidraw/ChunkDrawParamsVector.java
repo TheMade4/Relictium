@@ -1,6 +1,6 @@
 package me.jellysquid.mods.sodium.client.render.chunk.backends.multidraw;
 
-import me.jellysquid.mods.sodium.client.SodiumClientMod;
+import io.themade4.relictium.Relictium;
 import me.jellysquid.mods.sodium.client.util.CompatMemoryUtil;
 import org.lwjgl.MemoryUtil;
 
@@ -21,7 +21,7 @@ public abstract class ChunkDrawParamsVector extends StructBuffer {
     }
 
     public static ChunkDrawParamsVector create(int capacity) {
-        return SodiumClientMod.isDirectMemoryAccessEnabled() ? new UnsafeChunkDrawCallVector(capacity) : new NioChunkDrawCallVector(capacity);
+        return Relictium.isDirectMemoryAccessEnabled() ? new UnsafeChunkDrawCallVector(capacity) : new NioChunkDrawCallVector(capacity);
     }
 
     public abstract void pushChunkDrawParams(float x, float y, float z);

@@ -1,7 +1,7 @@
 package me.jellysquid.mods.sodium.client.render.chunk.compile;
 
 import it.unimi.dsi.fastutil.objects.Reference2ReferenceLinkedOpenHashMap;
-import me.jellysquid.mods.sodium.client.SodiumClientMod;
+import io.themade4.relictium.Relictium;
 import me.jellysquid.mods.sodium.client.gl.device.RenderDevice;
 import me.jellysquid.mods.sodium.client.model.vertex.type.ChunkVertexType;
 import me.jellysquid.mods.sodium.client.render.chunk.ChunkGraphicsState;
@@ -273,7 +273,7 @@ public class ChunkBuilder<T extends ChunkGraphicsState> {
     }
 
     private static int getThreadCount() {
-        int requested = SodiumClientMod.options().performance.chunkBuilderThreads;
+        int requested = Relictium.options().performance.chunkBuilderThreads;
         return requested == 0 ? getOptimalThreadCount() : Math.min(requested, getMaxThreadCount());
     }
 
@@ -397,7 +397,7 @@ public class ChunkBuilder<T extends ChunkGraphicsState> {
                 } catch (Throwable e) {
                     // Propagate any exception from chunk building
                     job.future.completeExceptionally(e);
-                    SodiumClientMod.logger().error("Chunk build failed", e);
+                    Relictium.logger().error("Chunk build failed", e);
                     continue;
                 } finally {
                     job.task.releaseResources();

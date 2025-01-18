@@ -1,6 +1,6 @@
 package me.jellysquid.mods.sodium.mixin.features.options;
 
-import me.jellysquid.mods.sodium.client.SodiumClientMod;
+import io.themade4.relictium.Relictium;
 import net.minecraftforge.client.GuiIngameForge;
 
 import org.spongepowered.asm.mixin.Mixin;
@@ -19,6 +19,6 @@ public class MixinInGameHud {
         //mixin target is `if (renderVignette && Minecraft.isFancyGraphicsEnabled())`
         //we assume that `renderVignette` is always true, because vanilla/forge will not change its value, and mods that
         //will change it explicitly must have a reason.
-        return SodiumClientMod.options().quality.enableVignette;
+        return Relictium.options().quality.enableVignette;
     }
 }
