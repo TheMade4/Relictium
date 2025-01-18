@@ -19,7 +19,7 @@ public class MixinChunkBuilder {
     @Mutable
     private int countRenderBuilders;
 
-    @Redirect(method = "<init>(I)V", at = @At(value = "INVOKE", target = "Lcom/google/common/collect/Queues;newArrayBlockingQueue(I)Ljava/util/concurrent/ArrayBlockingQueue;"))
+    @Redirect(method = "<init>(I)V", at = @At(value = "INVOKE", target = "Lcom/google/common/collect/Queues;newArrayBlockingQueue(I)Ljava/util/concurrent/ArrayBlockingQueue;", remap = false))
     public ArrayBlockingQueue<?> modifyThreadPoolSize(int capacity) {
         // Do not allow any resources to be allocated
         this.countRenderBuilders = 0;

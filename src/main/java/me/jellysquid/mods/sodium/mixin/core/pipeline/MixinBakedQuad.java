@@ -15,7 +15,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-@Mixin(BakedQuad.class)
+@Mixin(value = BakedQuad.class, remap = false)
 public class MixinBakedQuad implements ModelQuadView {
 
     @Shadow
