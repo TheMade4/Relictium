@@ -23,7 +23,7 @@
  */
 package repack.joml;
 
-import me.jellysquid.mods.sodium.client.util.math.Matrix4fExtended;
+import io.themade4.relictium.core.client.util.math.Matrix4fExtended;
 
 import java.io.Externalizable;
 import java.io.IOException;

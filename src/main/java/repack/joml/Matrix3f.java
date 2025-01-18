@@ -23,8 +23,8 @@
  */
 package repack.joml;
 
-import me.jellysquid.mods.sodium.client.util.Norm3b;
-import me.jellysquid.mods.sodium.client.util.math.Matrix3fExtended;
+import io.themade4.relictium.core.client.util.Norm3b;
+import io.themade4.relictium.core.client.util.math.Matrix3fExtended;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.Vec3i;
 

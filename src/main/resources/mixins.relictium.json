@@ -1,9 +1,9 @@
 {
-	"package": "me.jellysquid.mods.sodium.mixin",
+	"package": "io.themade4.relictium.mixin",
 	"required": true,
 	"minVersion": "0.8",
 	"compatibilityLevel": "JAVA_8",
-	"plugin": "me.jellysquid.mods.sodium.mixin.SodiumMixinPlugin",
+	"plugin": "io.themade4.relictium.mixin.RelictiumMixinPlugin",
 	"refmap": "mixins.relictium.refmap.json",
 	"injectors": {
 		"defaultRequire": 1
