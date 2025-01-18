@@ -1,11 +1,57 @@
 {
-	"package": "",
+	"package": "me.jellysquid.mods.sodium.mixin",
 	"required": true,
-	"refmap": "mixins.relictium.refmap.json",
-	"target": "@env(DEFAULT)",
-	"minVersion": "0.8.5",
+	"minVersion": "0.8",
 	"compatibilityLevel": "JAVA_8",
-	"mixins": [],
-	"server": [],
-	"client": []
+	"plugin": "me.jellysquid.mods.sodium.mixin.SodiumMixinPlugin",
+	"refmap": "mixins.relictium.refmap.json",
+	"injectors": {
+		"defaultRequire": 1
+	},
+	"overwrites": {
+		"conformVisibility": true
+	},
+	"client": [
+		"core.MixinCrashReportSection",
+		"core.MixinDirection",
+		"core.frustum.MixinFrustum",
+		"core.model.MixinBlockColors",
+		//"core.model.MixinItemColors",
+		"core.pipeline.MixinBakedQuad",
+		"core.pipeline.MixinBufferBuilder",
+		"core.pipeline.MixinVertexFormat",
+		"core.pipeline.MixinUnpackedBakedQuad",
+		// "features.block.MixinBlockModelRenderer",
+		"features.block.MixinWorldRenderer",
+		"features.buffer_builder.fast_advance.MixinVertexFormat",
+		"features.buffer_builder.fast_sort.MixinBufferBuilder",
+		"features.chunk_rendering.AccessorActiveRenderInfo",
+		"features.chunk_rendering.AccessorBlockFluidRenderer",
+		"features.chunk_rendering.AccessorBlockRenderDispatcher",
+		"features.chunk_rendering.MixinBiomeColorHelper",
+		"features.chunk_rendering.MixinChunkBuilder",
+		"features.chunk_rendering.MixinClientChunkManager",
+		"features.chunk_rendering.MixinClientWorld",
+		"features.chunk_rendering.MixinRenderGlobal",
+		"features.chunk_rendering.MixinWorldRenderer",
+		"features.debug.MixinDebugHud",
+		"features.fast_biome_colors.MixinBlock",
+		"features.gui.MixinDebugHud",
+		"features.entity.smooth_lighting.MixinEntityRenderer",
+		"features.entity.smooth_lighting.MixinPaintingEntityRenderer",
+		"features.model.MixinMultipartBakedModel",
+		"features.model.MixinWeightedBakedModel",
+		"features.options.MixinGameOptions",
+		"features.options.MixinInGameHud",
+		"features.options.MixinMinecraftClient",
+		"features.options.MixinOptionsScreen",
+		"features.options.MixinWorldRenderer",
+		"features.particle.cull.MixinParticleManager",
+		"features.render_layer.leaves.MixinLeavesBlock",
+		"features.sky.MixinWorldRenderer",
+		"features.world_ticking.MixinClientWorld"
+	],
+	"mixins": [
+		"core.MixinBlockLiquid"
+	]
 }
