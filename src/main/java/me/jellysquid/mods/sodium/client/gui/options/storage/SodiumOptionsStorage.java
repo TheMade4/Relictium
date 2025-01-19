@@ -25,6 +25,6 @@ public class SodiumOptionsStorage implements OptionStorage<SodiumGameOptions> {
             throw new RuntimeException("Couldn't save configuration changes", e);
         }
 
-        Relictium.logger().info("Flushed changes to " + Relictium.MODNAME + " configuration");
+        Relictium.logger().info("Flushed changes to " + Relictium.MOD_NAME + " configuration");
     }
 }

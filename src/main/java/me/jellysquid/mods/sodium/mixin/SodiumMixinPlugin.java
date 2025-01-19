@@ -17,18 +17,18 @@ import java.util.Set;
 public class SodiumMixinPlugin implements IMixinConfigPlugin {
     private static final String MIXIN_PACKAGE_ROOT = "me.jellysquid.mods.sodium.mixin.";
 
-    private final Logger logger = LogManager.getLogger(Relictium.MODNAME);
+    private final Logger logger = LogManager.getLogger(Relictium.MOD_NAME);
     private SodiumConfig config;
 
     @Override
     public void onLoad(String mixinPackage) {
         try {
-            this.config = SodiumConfig.load(new File(".").toPath().resolve("config").resolve(Relictium.MODID + "-mixins.properties").toFile());
+            this.config = SodiumConfig.load(new File(".").toPath().resolve("config").resolve(Relictium.MOD_ID + "-mixins.properties").toFile());
         } catch (Exception e) {
-            throw new RuntimeException("Could not load configuration file for " + Relictium.MODNAME, e);
+            throw new RuntimeException("Could not load configuration file for " + Relictium.MOD_NAME, e);
         }
 
-        this.logger.info("Loaded configuration file for " + Relictium.MODNAME + ": {} options available, {} override(s) found",
+        this.logger.info("Loaded configuration file for " + Relictium.MOD_NAME + ": {} options available, {} override(s) found",
                 this.config.getOptionCount(), this.config.getOptionOverrideCount());
     }
 

@@ -6,15 +6,16 @@ import net.minecraftforge.fml.common.Mod;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-@Mod(modid = Relictium.MODID, useMetadata = true)
+
+@Mod(modid = "vintagium", name = Relictium.MOD_NAME, version = Relictium.MOD_VERSION, useMetadata = true)
 public class Relictium {
 
-    public static final String MODID = Tags.MOD_ID;
-    public static final String MODNAME = Tags.MOD_NAME;
+    public static final String MOD_ID = Tags.MOD_ID;
+    public static final String MOD_NAME = Tags.MOD_NAME;
     public static final String MOD_VERSION = Tags.VERSION;
 
     private static SodiumGameOptions CONFIG;
-    public static Logger LOGGER = LogManager.getLogger(MODNAME);
+    public static Logger LOGGER = LogManager.getLogger(MOD_NAME);
 
     public static SodiumGameOptions options() {
         if (CONFIG == null) {
@@ -26,14 +27,14 @@ public class Relictium {
 
     public static Logger logger() {
         if (LOGGER == null) {
-            LOGGER = LogManager.getLogger(MODNAME);
+            LOGGER = LogManager.getLogger(MOD_NAME);
         }
 
         return LOGGER;
     }
 
     private static SodiumGameOptions loadConfig() {
-        return SodiumGameOptions.load(Minecraft.getMinecraft().gameDir.toPath().resolve("config").resolve(MODID + "-options.json"));
+        return SodiumGameOptions.load(Minecraft.getMinecraft().gameDir.toPath().resolve("config").resolve(MOD_ID + "-options.json"));
     }
 
     public static String getVersion() {

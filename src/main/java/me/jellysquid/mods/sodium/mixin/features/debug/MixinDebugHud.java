@@ -27,7 +27,7 @@ public abstract class MixinDebugHud {
     private ArrayList<String> redirectRightTextEarly(Object[] elements) {
         ArrayList<String> strings = Lists.newArrayList((String[]) elements);
         strings.add("");
-        strings.add(Relictium.MODNAME + " Renderer");
+        strings.add(Relictium.MOD_NAME + " Renderer");
         strings.add(TextFormatting.UNDERLINE + getFormattedVersionText());
         strings.add("");
         strings.addAll(getChunkRendererDebugStrings());

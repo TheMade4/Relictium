@@ -16,7 +16,7 @@ import java.util.stream.Stream;
  * Documentation of these options: https://github.com/jellysquid3/sodium-fabric/wiki/Configuration-File
  */
 public class SodiumConfig {
-    private static final Logger LOGGER = LogManager.getLogger(Relictium.MODNAME + "Config");
+    private static final Logger LOGGER = LogManager.getLogger(Relictium.MOD_NAME + "Config");
 
     private static final String JSON_KEY_SODIUM_OPTIONS = "relictium:options";
 
@@ -183,7 +183,7 @@ public class SodiumConfig {
         }
 
         try (Writer writer = new FileWriter(file)) {
-            writer.write("# This is the configuration file for " + Relictium.MODNAME + ".\n");
+            writer.write("# This is the configuration file for " + Relictium.MOD_NAME + ".\n");
             writer.write("#\n");
             writer.write("# You can find information on editing this file and all the available options here:\n");
             writer.write("# https://github.com/jellysquid3/sodium-fabric/wiki/Configuration-File\n");
