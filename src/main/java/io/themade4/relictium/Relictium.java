@@ -6,7 +6,7 @@ import net.minecraftforge.fml.common.Mod;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-@Mod(modid = Relictium.MODID, useMetadata = true)
+@Mod(modid = "vintagium", useMetadata = true)
 public class Relictium {
 
     public static final String MODID = Tags.MOD_ID;
